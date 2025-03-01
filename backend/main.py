@@ -69,7 +69,7 @@ for i, document in enumerate(all_splits):
         document.metadata["section"] = "end"
 
 
-all_splits[0].metadata
+# all_splits[0].metadata
 
 _ = db.add_documents(all_splits)
 
@@ -153,8 +153,6 @@ graph = graph_builder.compile()
 
 
 # Analysing user query, transforming it to improve relevancy and structure and retrieving using the transformed query
-
-
 
 for step in graph.stream(
     {"question": "What does the end of the post say about Task Decomposition?"},
