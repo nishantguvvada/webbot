@@ -1,0 +1,11 @@
+fastapi
+pydantic
+uvicorn
+langchain_google_genai
+langchain_mongodb
+pymongo
+langchain_community
+langchain_text_splitters
+langgraph
+langchain_core
+dotenv
