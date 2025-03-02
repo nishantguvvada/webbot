@@ -65,7 +65,7 @@ export const Chat = () => {
                         <RiRobot2Fill size={20} />
                     </div>
                     <div className="flex-1 bg-neutral-100 rounded-lg p-4">
-                        <p className="text-neutral-700">Hello! I'm ready to answer questions about your website. Please paste a URL above and build the vector store to get started.</p>
+                        <p className="text-neutral-700">Hello! I&apos;m ready to answer questions about your website. Please paste a URL above and build the vector store to get started.</p>
                         
                     </div>
                 </div>
