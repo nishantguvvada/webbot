@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from agentic_rag import create_vector_store, invoke
+from agentic_rag import create_vector_store, invoke, list_collection
 from pydantic import BaseModel
 import uvicorn
 
@@ -42,6 +42,12 @@ class UserInput(BaseModel):
 def llm_response(user_query: UserInput):
     response = invoke(user_query.user_input, user_query.collection_name)
     return { "response": response }
+
+@app.get("/collection")
+def get_collection():
+    response = list_collection()
+    return { "response": response }
+
 
 if __name__ == "__main__":
     uvicorn.run(app=app, host="0.0.0.0", port=8000)

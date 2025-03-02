@@ -10,6 +10,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Creating MongoDB connection
+client = MongoClient(os.getenv('MONGODB_URL'))
+
 # 3 Components from LangChain's suite of integrations 1. Chat Model 2. Embeddings Model 3. Vector Store
 
 # 1. Chat Model
@@ -42,7 +45,6 @@ def load_source(url: str):
 
 # 3. Vector Store
 
-client = MongoClient(os.getenv('MONGODB_URL'))
 DB_NAME = "web_db"
 COLLECTION_NAME = "vectorstore"
 ATLAS_VECTOR_SEARCH_INDEX_NAME = "index-vectorstore"
@@ -119,3 +121,9 @@ def invoke(user_message: str, collection_name):
     )
 
     return response["messages"][-1].content
+
+# List Mongo DB collections
+
+def list_collection():
+    collection_names = client[DB_NAME].list_collection_names()
+    return collection_names
