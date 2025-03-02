@@ -7,7 +7,7 @@ import uvicorn
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",
+    "https://webbot-flax.vercel.app",
 ]
 
 app.add_middleware(
